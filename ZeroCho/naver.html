@@ -72,12 +72,16 @@
             --color_shop: #9858f5;
             --color_shop_rgb: 152, 88, 245;
         }
+        * {
+            box-sizing: border-box;
+        }
         html, body{
             margin:0;
             padding:0;
         }
         #wrap{
             text-align:center;
+            min-width: 1340px;
         }
         #wrap-center{
             width:1280px;
@@ -88,36 +92,68 @@
             text-align:left;
             position:relative;
         }
-        #header-hamburger{
+        #header-hamburger, #header-naverpay, #header-talk, #header-notice, #header-basket{
             position: absolute;
-            top: 18px;
-            left: -10px;
-            padding:10px;
+            top: 5px;
+            padding:8px;
             display: inline-block;
             background: none;
             border:none;
             cursor: pointer;
         }
-        #header-hamburger:hover::before{
+        #header-hamburger:hover::before, #header-naverpay:hover::before, #header-talk:hover::before, #header-notice:hover::before, #header-basket:hover::before{
             position:absolute;
             content:'';
             z-index:0;
             left:1px;
             top:1px;
-            width:44px;
-            height:44px;
+            width:48px;
+            height:48px;
             background-color: var(--color_option_bg);
-            border-radius: 50%;
+            border-radius: 50%; 
         }
-        #header-hamburger > div{
+        #header-hamburger > div, #header-naverpay > div, #header-talk > div, #header-notice > div, #header-basket > div{
             background-image:url(./sp_main.png);
-            width: 26px;
-            height: 26px;
+            width: 32px;
+            height: 32px;
             position:relative;
             z-index:1;
             background-repeat: no-repeat;
+        }
+        #header-hamburger{
+            left: -12px;           
+        }
+        #header-hamburger > div{
             background-size: 443px 424px;
             background-position: -285px -214px;
+        }
+        #header-naverpay{
+            left: 41px;
+        }
+        #header-naverpay > div{
+            background-size: 443px 424px;
+            background-position: -33px -287px;
+        }
+        #header-talk{
+            right: 94px;
+        }
+        #header-talk > div{
+            background-size: 443px 424px;
+            background-position: -165px -287px;
+        }
+        #header-notice{
+            right: 42px;
+        }
+        #header-notice > div{
+            background-size: 443px 424px;
+            background-position: -246px -229px;
+        }
+        #header-basket{
+            right: -10px;
+        }
+        #header-basket > div{
+            background-size: 443px 424px;
+            background-position: -99px -287px;
         }
         #main {
             height: 2000px;
@@ -142,7 +178,30 @@
                     <span class="blind">확장 영역</span>
                     <!--::after-->
                 </button>
-
+                <button id="header-naverpay">
+                    <!--::before-->
+                    <div></div>
+                    <span class="blind">네이버 페이</span>
+                    <!--::after-->
+                </button>
+                <button id="header-talk">
+                    <!--::before-->
+                    <div></div>
+                    <span class="blind">네이버톡</span>
+                    <!--::after-->
+                </button>
+                <button id="header-notice">
+                    <!--::before-->
+                    <div></div>
+                    <span class="blind">알림</span>
+                    <!--::after-->
+                </button>
+                <button id="header-basket">
+                    <!--::before-->
+                    <div></div>
+                    <span class="blind">장바구니</span>
+                    <!--::after-->
+                </button>
             </div>
             <div id="search"></div>
             <div id="nav"></div>
